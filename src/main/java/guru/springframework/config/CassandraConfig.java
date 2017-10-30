@@ -31,6 +31,8 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 
     @Override
     protected List<DropKeyspaceSpecification> getKeyspaceDrops() {
+        // method is here because keyspace is dropped when Spring stops.
+        // if Cassandra installation is permanent you do not need to implement this.
         return Arrays.asList(DropKeyspaceSpecification.dropKeyspace(KEYSPACE));
     }
 
