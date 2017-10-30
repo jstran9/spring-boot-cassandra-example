@@ -19,6 +19,7 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 
     @Override
     public SchemaAction getSchemaAction() {
+        // if product table doesn't then Spring Data will come in and create it.
         return SchemaAction.CREATE_IF_NOT_EXISTS;
     }
 
